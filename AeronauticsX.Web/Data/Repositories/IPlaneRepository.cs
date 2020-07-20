@@ -1,6 +1,6 @@
-﻿namespace AeronauticsX.Web.Models
+﻿namespace AeronauticsX.Web.Data.Repositories
 {
-    using AeronauticsX.Web.Models.Entities;
+    using AeronauticsX.Web.Data.Entities;
 
     public interface IPlaneRepository : IGenericRepository<Plane>
     {

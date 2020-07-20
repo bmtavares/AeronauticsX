@@ -1,4 +1,4 @@
-﻿namespace AeronauticsX.Web.Models
+﻿namespace AeronauticsX.Web.Data.Repositories
 {
     using System.Linq;
     using System.Threading.Tasks;

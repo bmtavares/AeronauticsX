@@ -1,13 +1,19 @@
-﻿namespace AeronauticsX.Web.Models.Entities
+﻿namespace AeronauticsX.Web.Data.Entities
 {
     public class Plane : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
+
 
         public string Maker { get; set; }
 
+
         public string Model { get; set; }
 
+
         public string Name { get; set; }
+
+
+        public bool Operational { get; set; }
     }
 }

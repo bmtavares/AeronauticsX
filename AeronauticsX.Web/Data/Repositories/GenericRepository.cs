@@ -1,9 +1,9 @@
-﻿namespace AeronauticsX.Web.Models
+﻿namespace AeronauticsX.Web.Data.Repositories
 {
     using System.Linq;
     using System.Threading.Tasks;
 
-    using AeronauticsX.Web.Models.Entities;
+    using AeronauticsX.Web.Data.Entities;
 
     using Microsoft.EntityFrameworkCore;
 
@@ -35,7 +35,7 @@
 
         public async Task<bool> ExistAsync(int id)
         {
-            return await _context.Set<T>().AnyAsync(e => e.ID == id);
+            return await _context.Set<T>().AnyAsync(e => e.Id == id);
         }
 
         public IQueryable<T> GetAll()
@@ -47,7 +47,7 @@
         {
             return await _context.Set<T>()
                 .AsNoTracking()
-                .FirstOrDefaultAsync(e => e.ID == id);
+                .FirstOrDefaultAsync(e => e.Id == id);
         }
 
         public async Task UpdateAsync(T entity)

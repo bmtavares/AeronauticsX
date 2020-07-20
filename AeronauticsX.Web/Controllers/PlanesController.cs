@@ -1,10 +1,12 @@
 ﻿namespace AeronauticsX.Web.Controllers
 {
     using System.Threading.Tasks;
+
+    using AeronauticsX.Web.Data.Entities;
+    using AeronauticsX.Web.Data.Repositories;
+
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
-    using AeronauticsX.Web.Models;
-    using AeronauticsX.Web.Models.Entities;
 
     public class PlanesController : Controller
     {
@@ -49,7 +51,7 @@
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID, Maker, Model, Name")] Plane plane)
+        public async Task<IActionResult> Create([Bind("Id, Maker, Model, Name, Operational")] Plane plane)
         {
             if (ModelState.IsValid)
             {
@@ -80,9 +82,9 @@
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID, Maker, Model, Name")] Plane plane)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Maker, Model, Name, Operational")] Plane plane)
         {
-            if (id != plane.ID)
+            if (id != plane.Id)
             {
                 return NotFound();
             }
@@ -95,7 +97,7 @@
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!await _planeRepository.ExistAsync(plane.ID))
+                    if (!await _planeRepository.ExistAsync(plane.Id))
                     {
                         return NotFound();
                     }

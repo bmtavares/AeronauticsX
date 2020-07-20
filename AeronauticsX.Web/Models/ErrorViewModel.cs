@@ -1,7 +1,7 @@
-using System;
-
 namespace AeronauticsX.Web.Models
 {
+    using System;
+
     public class ErrorViewModel
     {
         public string RequestId { get; set; }
