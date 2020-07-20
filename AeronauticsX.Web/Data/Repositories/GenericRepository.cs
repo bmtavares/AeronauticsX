@@ -2,8 +2,10 @@
 {
     using System.Linq;
     using System.Threading.Tasks;
-    using Microsoft.EntityFrameworkCore;
+
     using AeronauticsX.Web.Models.Entities;
+
+    using Microsoft.EntityFrameworkCore;
 
     public class GenericRepository<T> : IGenericRepository<T> where T : class, IEntity
     {
